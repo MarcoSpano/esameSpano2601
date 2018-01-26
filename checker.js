@@ -21,6 +21,7 @@ function check(url, invocationParameters,  expectedResultData, expectedResultSta
     }
     
     var resurl = takeData(url,paraminvocation);
+    
 
     var compare = compareResults(expectedResultData,resurl);
 
@@ -50,6 +51,10 @@ function takeData(url,paraminvocation) {
     .then(body => {
         return body.json();
     })
+    .then(function(res) {
+        //console.log(res.status);
+        return res.json();
+        })
     .catch(error => {
         console.log(error);
     });

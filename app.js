@@ -15,7 +15,7 @@ app.get('/count',function (req, res) {
 })
 
 app.get('/check',function (req, res) {
-    res.json(checker.check());
+    res.json(checker.check("http://localhost:5000/count","",{count: 5},200));
 })
 
 app.listen(app.get('port'), function() {
